@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EL LEGADO BARBERÃA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#693b22",
+                      "outline": "#9a8f80",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#d1c5b4",
+                      "surface": "#131313",
+                      "background": "#131313",
+                      "primary": "#e9c176",
+                      "surface-variant": "#353534",
+                      "surface-dim": "#131313",
+                      "on-tertiary": "#313030",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-background": "#e5e2e1",
+                      "secondary-fixed-dim": "#fab896",
+                      "tertiary-container": "#a7a5a5",
+                      "secondary-fixed": "#ffdbca",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "error-container": "#93000a",
+                      "surface-tint": "#e9c176",
+                      "outline-variant": "#4e4639",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary": "#412d00",
+                      "on-error-container": "#ffdad6",
+                      "primary-container": "#c5a059",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-surface": "#e5e2e1",
+                      "primary-fixed-dim": "#e9c176",
+                      "tertiary-fixed": "#e5e2e1",
+                      "primary-fixed": "#ffdea5",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-container": "#201f1f",
+                      "surface-bright": "#393939",
+                      "on-secondary": "#4e250e",
+                      "secondary": "#fab896",
+                      "on-secondary-container": "#e7a786",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-container": "#4e3700",
+                      "surface-container-highest": "#353534",
+                      "tertiary": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#693b22",
+                      "inverse-on-surface": "#313030",
+                      "on-tertiary-container": "#3b3b3b",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#341100",
+                      "on-primary-fixed": "#261900",
+                      "inverse-primary": "#775a19"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "gutter": "24px",
+                      "container-max": "1200px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Noto Serif"],
+                      "label-caps": ["Manrope"],
+                      "headline-md": ["Noto Serif"],
+                      "headline-lg": ["Noto Serif"],
+                      "body-md": ["Manrope"],
+                      "body-lg": ["Manrope"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121212;
+            color: #e5e2e1;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-body-md bg-background text-on-background overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-[#C5A059]/20 bg-[#121212]/90 backdrop-blur-md flex justify-between items-center px-8 h-20 w-full">
+<div class="text-2xl font-bold tracking-[0.2em] text-[#C5A059] font-serif uppercase">EL LEGADO BARBERÃA</div>
+<nav class="hidden md:flex gap-12">
+<a class="text-[#C5A059] font-bold border-b-2 border-[#C5A059] pb-1 font-serif uppercase tracking-tighter" href="#nosotros">NOSOTROS</a>
+<a class="text-stone-400 hover:text-[#C5A059] transition-colors font-serif uppercase tracking-tighter" href="#galeria">GALERÃA</a>
+<a class="text-stone-400 hover:text-[#C5A059] transition-colors font-serif uppercase tracking-tighter" href="#contacto">CONTACTO</a>
+</nav>
+<button class="bg-[#C5A059] text-[#121212] px-6 py-2 font-label-caps text-label-caps hover:opacity-90 transition-all duration-300">
+            RESERVAR
+        </button>
+</header>
+<main class="min-h-screen pt-20">
+<!-- Main Layout: 3 Vertical Columns -->
+<div class="flex flex-col md:flex-row h-full min-h-[calc(100vh-140px)] w-full">
+<!-- Contenedor 1 (Izquierda): SOBRE NOSOTROS -->
+<section class="relative w-full md:w-1/3 min-h-[819px] md:h-[calc(100vh-80px)] overflow-hidden border-r border-[#C5A059]/10 group" id="nosotros">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close-up of a vintage luxury leather barber chair in a moody, dark-lit high-end barbershop with golden accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiscT9-BF3ap5BzsRanXBZtK6FaUy69dEf4rsx_HhZpYKv-Yp9NaGDRRdIQjd5JAd9JKzA24iyKsN7i0Q-TpFdfvBwZlQxG4lLB1tOjdF-HNo46EuzZr4ypz_Aqoj5ldbWXBewlR-7ePXsRvBOWq4MqFypKnmyyW8BaD9ea1m6wkVwZDmEhdGznwn-OKxtR71Pr1YB7oJ91hf8rN6ISmHp3e-Mkitriqn3zB4ZfLrqclODxHqdwWXonbvFpNXdF1hqPRPu6Y9sXno')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/70 to-transparent"></div>
+<div class="relative h-full flex flex-col justify-end p-12 space-y-6">
+<h2 class="font-headline-xl text-headline-xl text-[#C5A059] uppercase">NOSOTROS</h2>
+<div class="w-12 h-1 bg-[#C5A059]"></div>
+<p class="text-body-lg font-body-lg text-on-surface leading-relaxed max-w-sm">
+                        En <span class="text-[#C5A059] font-bold">El Legado</span>, entendemos la barberÃ­a como una herencia de precisiÃ³n. Cada corte es un testimonio de nuestra pasiÃ³n por la tradiciÃ³n clÃ¡sica, elevada a los estÃ¡ndares de lujo contemporÃ¡neo.
+                    </p>
+<p class="text-body-md font-body-md text-on-surface-variant italic">
+                        "La excelencia no es un acto, sino un hÃ¡bito grabado en cada trazo."
+                    </p>
+</div>
+</section>
+<!-- Contenedor 2 (Centro): GALERÃA -->
+<section class="w-full md:w-1/3 min-h-[819px] md:h-[calc(100vh-80px)] bg-surface-container flex flex-col border-r border-[#C5A059]/10 overflow-hidden" id="galeria">
+<div class="p-8 pb-4">
+<h2 class="font-headline-xl text-headline-xl text-center text-[#C5A059] uppercase">GALERÃA</h2>
+</div>
+<div class="flex-1 overflow-y-auto p-4 hide-scrollbar">
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 aspect-video overflow-hidden border border-[#C5A059]/20">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Sophisticated male haircut with sharp fade and perfectly groomed beard, high-contrast studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1w3PGIFf8r6aVQ5FVIR6_wN8K4tV-OgO1k7wXhmfWoPl8mOpL_1-boHAyaBj7R9NpMSuQVWA5JfnkpC0TcNAFJ9MvoAYWZC3HMtkyavF1pNXUatcadLiTINL0n_LpohCwdZ88BAomAKu-M9qDu7SBJKresmY3BETKX_W_p63pwqfStxloI28Xs_0sV1gicsHztjY49o8YtcWKppi3MhLKc3TOCLm_C6xmwVHkN8xLlwwKVr3zIMwmWkXcu-xA99bkgXzS540gne8"/>
+</div>
+<div class="aspect-square overflow-hidden border border-[#C5A059]/20">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Barber using a traditional straight razor for a beard line-up, detailed focus on hands and tool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmlxlphJq_xT1sm7a_3YhaDenpHxxH4A4rtH166XXM7W6BI5jpDEfbcCSGuhs4PmH7RWuf_pJfa4N0r_d3UdmSJqtLNLLPrEEdyj7a4HL6Wua_ODxs2JjAdAZQP__Er4vlfw4jqTvDTaruIhzJnv2TBi85mj7bq8xre002VQbtE3_rxa89s2lM9_dXlKOZtEofNwf1p-PIfTpGTG9QH7GWwsa1cTWwrGPm4f2Pi07a0JmOlbUKOUO8_FWlwaBUbmoWHm6jDzFVFk"/>
+</div>
+<div class="aspect-square overflow-hidden border border-[#C5A059]/20">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Interior of a luxury barbershop with dark wood, copper fixtures, and ambient warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvsR2m2SDb0jri0484F994OkgWHmNr_LNAKD6aCDyatrn8u0D5T5dBl0g4wToIoD4WkeNgCHSd3d66JQw5C2JVXelvMalC9_sj9FMNA_KEIQXFLPnhnS8OsUgvhF-OFC6tUyQ5II5N8So4uutgUsOTEZfICSA1maWfCEcZVhwiQa7-94JCOxULs2AkzWWUtP6Wy2DY6rNQr-7DZoWRUtosiFS0gxxxrXmjJ25dS7gphGw-VDBuOumNfWw-o6elr4Lc2rICpIyjW-Q"/>
+</div>
+<div class="col-span-2 aspect-square overflow-hidden border border-[#C5A059]/20">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Portrait of a dapper man with a classic pompadour hairstyle and clean beard in a dark setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtLpCMGeXJGv4SiZEEkvbAcjmSa2MnXL-atfAbhtEEqBSqi3SdwnCq4KKpiBqyBg0oI5lPB2RuKWZd-C8-WAUs8AWQa8fmpjr_fk_Y0PLnQkLbqBf-M0yYBna0RhmnhgbW_NAlQcRYbobTCjO-L5AqmeZajOc6AwjOi_xS3S9yVY0iYfjbhkPtwkfq1Xt3hmomFXK_d2NhmZwOUMwvmLxeyTk9TrbaXAFHDjFlO75BbxO6zxnyIjOwBtcpNUt3WKPjZD3GewoKpCI"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Contenedor 3 (Derecha): CONTACTO -->
+<section class="w-full md:w-1/3 min-h-[819px] md:h-[calc(100vh-80px)] bg-surface flex flex-col p-12 justify-center space-y-12" id="contacto">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-[#C5A059] uppercase mb-8">CONTACTO</h2>
+<form class="space-y-6">
+<div class="relative group">
+<input class="w-full bg-transparent border-b border-[#C5A059]/30 focus:border-[#C5A059] focus:ring-0 text-on-surface py-3 transition-colors placeholder:text-stone-600 font-label-caps uppercase text-xs" placeholder="NOMBRE" type="text"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-b border-[#C5A059]/30 focus:border-[#C5A059] focus:ring-0 text-on-surface py-3 transition-colors placeholder:text-stone-600 font-label-caps uppercase text-xs" placeholder="EMAIL" type="email"/>
+</div>
+<div class="relative group">
+<textarea class="w-full bg-transparent border-b border-[#C5A059]/30 focus:border-[#C5A059] focus:ring-0 text-on-surface py-3 transition-colors placeholder:text-stone-600 font-label-caps uppercase text-xs resize-none" placeholder="MENSAJE" rows="3"></textarea>
+</div>
+<button class="w-full border border-[#C5A059] text-[#C5A059] py-4 font-label-caps text-label-caps hover:bg-[#C5A059] hover:text-[#121212] transition-all duration-500" type="button">
+                            ENVIAR MENSAJE
+                        </button>
+</form>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-[#C5A059]">location_on</span>
+<div>
+<p class="font-label-caps text-label-caps text-[#C5A059]">UBICACIÃN</p>
+<p class="text-body-md text-on-surface-variant">Calle de la TradiciÃ³n 42, Barrio HistÃ³rico</p>
+</div>
+</div>
+<div class="w-full h-32 bg-surface-container-high border border-[#C5A059]/10 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="Stylized monochromatic map showing an urban street layout with subtle golden pin." data-location="Madrid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpobojdK9r2FponONz2FyIidpvPfH8fOhglADHi63xrayGc8KdF4a0hVz8vsNRtln9naSLeAZg2ESshmu2rtSUEyYbSWWOniRAYzUIqLurdJ2mpNsshGSfoWvcvA4D7AUqcRtmU4f1D_I2IUvI82_3FDeLeUp9Ttft3WF3PW0dHDvhfwYymFS2Ma0dOE09QtKWLNQDIXCBD4b7JnF-f4x2VqBkAO6E4jW-LIxUsh6wytJV0p6Cri1Zxp4TzkZWpbU8MgHWaf7dNkM"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-[#C5A059] w-3 h-3 rounded-full animate-pulse"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#C5A059]/10 bg-[#121212] flex flex-col md:flex-row justify-between items-center px-12 py-8 gap-4">
+<div class="text-[#C5A059] font-serif font-black uppercase text-lg tracking-widest">EL LEGADO</div>
+<div class="text-stone-500 font-sans text-[10px] tracking-widest uppercase">
+            Â© 2024 EL LEGADO BARBERÃA. TRADICIÃN Y PRECISIÃN.
+        </div>
+<div class="flex gap-8">
+<a class="text-stone-500 hover:text-white transition-colors font-sans text-[10px] tracking-widest uppercase" href="#">INSTAGRAM</a>
+<a class="text-stone-500 hover:text-white transition-colors font-sans text-[10px] tracking-widest uppercase" href="#">FACEBOOK</a>
+<a class="text-stone-500 hover:text-white transition-colors font-sans text-[10px] tracking-widest uppercase" href="#">UBICACIÃN</a>
+</div>
+</footer>
+</body></html>

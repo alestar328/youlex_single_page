@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&amp;family=Noto+Serif:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#313030",
+                    "outline": "#9a8f80",
+                    "on-primary-fixed": "#261900",
+                    "on-primary": "#412d00",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-variant": "#353534",
+                    "on-surface-variant": "#d1c5b4",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#c5a059",
+                    "on-tertiary": "#313030",
+                    "primary": "#e9c176",
+                    "secondary": "#fab896",
+                    "secondary-fixed-dim": "#fab896",
+                    "on-tertiary-container": "#3b3b3b",
+                    "inverse-primary": "#775a19",
+                    "surface-container-high": "#2a2a2a",
+                    "surface": "#131313",
+                    "on-secondary-container": "#e7a786",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "secondary-container": "#693b22",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#393939",
+                    "outline-variant": "#4e4639",
+                    "on-secondary": "#4e250e",
+                    "inverse-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "on-background": "#e5e2e1",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdea5",
+                    "tertiary-container": "#a7a5a5",
+                    "on-secondary-fixed": "#341100",
+                    "surface-dim": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "secondary-fixed": "#ffdbca",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353534",
+                    "background": "#131313",
+                    "surface-tint": "#e9c176",
+                    "tertiary": "#c8c6c5",
+                    "on-secondary-fixed-variant": "#693b22",
+                    "on-primary-container": "#4e3700",
+                    "primary-fixed-dim": "#e9c176"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-md": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"],
+                    "headline-xl": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5a059;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- CURTAIN OVERLAY CONTAINER -->
+<main class="min-h-screen w-full bg-[#121212] flex flex-col relative">
+<!-- TopAppBar (from JSON Hierarchy) -->
+<header class="bg-[#121212] border-b border-[#C5A059]/30 fixed top-0 left-0 right-0 z-50">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-full">
+<!-- Close Action - Inverted priority as per prompt request -->
+<button class="group flex items-center gap-2 text-stone-400 hover:text-[#C5A059] transition-colors scale-95 duration-200 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+<span class="font-serif uppercase tracking-widest text-xs">CERRAR</span>
+</button>
+<!-- Brand Logo / Product Name from JSON -->
+<div class="text-2xl font-bold text-[#C5A059] tracking-tighter font-serif uppercase">
+                    HERITAGE &amp; STEEL
+                </div>
+<!-- Action Button from JSON -->
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-serif uppercase tracking-widest text-xs font-bold hover:bg-[#1A1A1A] hover:text-[#C5A059] transition-all border border-transparent hover:border-[#C5A059]">
+                    BOOK NOW
+                </button>
+</div>
+</header>
+<!-- GALLERY CONTENT -->
+<div class="mt-24 px-8 md:px-margin-desktop pb-20">
+<!-- Header Section -->
+<div class="flex flex-col items-center py-12 space-y-4">
+<div class="w-12 h-[1px] bg-primary"></div>
+<h1 class="font-headline-xl text-primary uppercase text-center tracking-widest">NUESTRO LEGADO</h1>
+<p class="font-label-caps text-outline uppercase max-w-md text-center">Una crÃ³nica visual de precisiÃ³n, artesanÃ­a y estilo atemporal.</p>
+</div>
+<!-- Bento-Style Masonry Grid (15 Images) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-container-max mx-auto">
+<!-- 1. Large Feature Interior -->
+<div class="md:col-span-8 group relative overflow-hidden h-[450px] border border-[#C5A059]/20">
+<img alt="Interior View" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Interior of a luxury vintage barbershop with dark wood paneling, ornate mirrors, leather chairs, and dramatic warm spotlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqH58An7FuKKstJ8-_5RcsHZcbTZbtGqzGxyfjeb9v54_ySUpW9m1uHF6qjRPn5QR4LMwe507zTLsM_H2PJbsiNZU2_LtJTirAbrKB4y6so79hBN8PhSBW9PnewXAOo4XDa3FeC1BFiDx8Jl_Dd72ySTyIRCCLFCOy2ULI19maX2f8BuRIK3XZ-hNNyvsRfnJorjxlXp7skSsschZY8gS_IjMyJX-s9JG-Jxn6rhDS7nmGlvjiu-72mAkREN4bbAqjl-_liyqiCg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary font-headline-md">Santuario del Grooming</span>
+<p class="text-stone-300 font-body-md">Donde la tradiciÃ³n se encuentra con el confort moderno.</p>
+</div>
+</div>
+<!-- 2. Classic Haircut -->
+<div class="md:col-span-4 group relative overflow-hidden h-[450px] border border-[#C5A059]/20">
+<img alt="Classic Pompadour" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Close up of a classic pompadour hairstyle with clean taper fade, high contrast lighting, black and white portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANsJjFdsH6Ob5PV70xs5u-vJy_q7xCxaoEmhiXDxqX7jT9r_1Y5_wF14VcuV8nWd1FKjTffWMuWRtI3CfHMjYSuBbKpIG71u_LUsh_bH5ZV5WvBWbI56HT0lDZyhyw7zcBY1spF_6A8sW-VZcRxJ_kQ5KG4Dr5629kKqiCwtTVx2YpJoOMOo6bUeOdcxIIbRgHBOKDO_rkkky0wtZeqjrOMhNK5Z-Ix_DsyGTwM9CAVcnfXWZfEzN-QhDetVYbLyvovkgEoBks76o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary font-headline-md uppercase tracking-tight">Classic Pompadour</span>
+</div>
+</div>
+<!-- 3. Tool Shot Interior -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px] border border-[#C5A059]/20">
+<img alt="Vintage Tools" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Macro shot of vintage silver straight razors and scissors resting on a dark leather cloth, moody cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIG34Vp7CWhzVgZDRk3tcTaC89ytCbqpqedgTuNWllbjWXsxgj2sieNR01Q6dnGky9rG1cQYssSmkRrTxjR9zlSYukrF6ZYRvuiMnrnJWb77R0Vl52JleOQ8QTD6FveAjCDcgwB5i19I8Kq_HskNReMtc2OMJCXkYxibTk6vozEuEDwHTrGxPGFSe6OlbkRDk0QsZReGN6s5SruWTQydzPYMl9OabdvpyBNjY4WrR9MkDOMp5bGY_eoQqbElfLOI_Lkh_nVQPxQYc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-primary font-label-caps">The Heritage Kit</span>
+</div>
+</div>
+<!-- 4. Beard Trim -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px] border border-[#C5A059]/20">
+<img alt="Beard Trim" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Close-up of a perfectly groomed beard and mustache, sharp lines, detailed texture, studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Sq8bs1B535IrmmsDETwSHJw-ADbSAxvgU_KBhzHFAM39rXPmzIZeDtPYst39f9RWLgDESpXOq6za6gPdyHYtgD04cDB7k1dq5DL1SG0qDSrFLKfXckDHHSyFP0_ki3H5i-pNxys32LPM1dILjGymNvEKNlAIXj3HJgUu9xUvp3KeVdrGqK9kcdBKsmI3YPlrHay1UzYHPZcXeBN7tTWzoXyCWAZK-qReMcCDGWcMOXoGdIkAXys90iwr-ak-cYnIiBK4bhenEsM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-primary font-label-caps uppercase">Precision Beard Shaping</span>
+</div>
+</div>
+<!-- 5. Razor Fade -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px] border border-[#C5A059]/20">
+<img alt="Razor Fade" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Detailed side view of a skin fade haircut with surgical line detail, professional barbering result." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY4JlOIKMKkZOD0UGV7bYO4lv2UWgZydUubZiNUVDpamyGNk_OnfruOasLo5CcAmoLcgMEyQzWw5hR5RYSyljYFzblUaK66KJcHqM7w7hvl9jmgW_qXnOqd6k3mG7tgjCRaEjPhBjQfnxrpYEJ31bQ6cfUSg9Zea5lReQHNY2ZVODq3woWbjwUoC0SbSARcmsIePs9uK5kVCnu2NxvG-u4kNyleXfyGEZ6D5cPc-H6DApEf2C8AbBB0vNJlrSB5mg7qAiag5JXIPA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-primary font-label-caps uppercase">Signature Razor Fade</span>
+</div>
+</div>
+<!-- 6. Interior Detail - Chair -->
+<div class="md:col-span-6 group relative overflow-hidden h-[400px] border border-[#C5A059]/20">
+<img alt="Barber Chair" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Vintage red and chrome barber chair in a dimly lit studio, shadow play on walls, luxury atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsT-hJh1AmX7am02a3Ec0Ah_2wPenXxI4uxBIIwYnD3Nh5UununTCUe-BYhVScpgwGFLc5ogCkX-5xhXfxReL169aPPdUXWNCemHWwNRzihy8fQdBmeHnQSZLGg4jAmDFdq_klz4wj2jskrc8w9QJhzDgDqVi01GS6Z3zNV6YGQuWgUrjKtzRtVjpfXuJxh2I43MpaMXmAgyPvku4EwNW1RuhgWpNlW1LE06FBFdsr2d6SXTzqppyYIefl_K7FoAAfqAJmBZGpxmY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary font-headline-md">Asiento de Honor</span>
+</div>
+</div>
+<!-- 7. Modern Styling -->
+<div class="md:col-span-6 group relative overflow-hidden h-[400px] border border-[#C5A059]/20">
+<img alt="Textured Crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Young man with a modern textured crop haircut, matte finish styling, edgy urban portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6tY8SfrmnQRcXzgx5GNjojfaNWffCEFqRhmnqjrso7-eKqi-QaOInaN4roGUWOYnKeF_68AzZ9nO6Whxlui6Y-sGFisDHatjbbJ9NNfOQl8VMsRlVgy-7NUmMvq9L19A2VIGpS9_yH71aqceCl8PONJBhjwcbk8G16ksxHiJao2kng-gHIc_g2Eb-_RiMQLiQ7yVCpg__hT_tg84G9EPHnYqtik-k3kSaKp48NcT3X2mnQJonqy6zn-bHxd0gc_nLRGkR3rOri1s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary font-headline-md uppercase">Textured Crop</span>
+</div>
+</div>
+<!-- 8. Barber Action -->
+<div class="md:col-span-3 group relative overflow-hidden h-[250px] border border-[#C5A059]/20">
+<img alt="Barber hands" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Barber's hands with traditional tattoos using a straight razor on a client, close-up, focus on precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj_k8rHCBS67fdrg4Ylu8zztDbiw76ltyDa4HoKDF4s_ynubR7MIqxeB0oyp0qaZUkz5UpHCUii-ojIDVgTEeERAEgiCg0MyPO1-sNJV2rcvDJWLrQ2mAvWLhfDEw1dgo6Be4HN0M8NAwxr-R_YuPvf9aSSksuq_tg8GyMxt1lENRSBK9MQiurvXW7Rqo0bCl38qfY8pCzMWiKXHV9SP20u0Vu_VQzZUO6mDash8dx-nl-zpS2pwSUsZ1WnTclIRBFtEecXmcRKF0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
+<span class="text-primary font-label-caps">Mano de Maestro</span>
+</div>
+</div>
+<!-- 9. Slick Back -->
+<div class="md:col-span-3 group relative overflow-hidden h-[250px] border border-[#C5A059]/20">
+<img alt="Slick Back" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Man with high-gloss slicked back hair, clean profile, elegant grooming style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVTkdkIf2EB8ELtJ5G3L9x_VHLxBH8-DaOH9l0ZO665iO6y1Kg4wogGWfaIXvZnCPjb98Z4onxLK_F_vxpoJJn_stiBiTNBBKY5FUoXwP3J_cNUmmfXJC1e-sZywMFFMXEJqMEhLcOWqkb7aiotXsmwSu7_SZgtWru9wEGYVGrWIo52x1L7AZLyoDvR9jW0hSH-KTcSXJiMOjhYzrGVcA6D0Lx2Zoc2PxClpNqJdXRjBqKhjlm7XaFO26drmGX0ddFpHnoy_TU_ME"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
+<span class="text-primary font-label-caps">Classic Slick Back</span>
+</div>
+</div>
+<!-- 10. Interior Products -->
+<div class="md:col-span-6 group relative overflow-hidden h-[250px] border border-[#C5A059]/20">
+<img alt="Barber Products" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Shelf of premium amber glass grooming bottles and metal pomade tins on a dark wooden shelf." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABwbJ3wvlbTRAGufhymVaWmmBDhTjUP0di5HSOdPrlhiFJhYHrFaCiHZ45uqXqIwEG_V5aZgl-PqIU2AH5-sRT8hb5FJJ2pKDD5msAKfd29dN-LuChs-3cpB663VchKm8pzbt_xtYfvRv6iwOmLrfcjLRc7qTEC8es1aIORPSm6QJS2H1_iqeh6ouJjOR7p_SW1J3jD9t0CWgshWwFWcoxVNzTzNGMVNhy-7cN9QBCxV8RkpB60P9VWBn-JBXxdLkm3NaeJgtxA1Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-primary font-headline-md uppercase">Steel &amp; Ointment</span>
+</div>
+</div>
+<!-- 11. Buzz Cut -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px] border border-[#C5A059]/20">
+<img alt="Buzz Cut" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Clean buzz cut with sharp hairline lining, minimalist high-contrast male portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiPGeES2VnxqI77aaeaLTjCmtGLnB5wFiTD9wq1cjAwYX0s1gKx7y7kJhh5PRuKVDFG7LaxKPQ8fdOrOU0LqVJlqC3SuNRweCm3E8QyQ38BQLlN9Nw4nlgoQjH693RA1CwKW6C25tTwB7kwZ6F0-UlOIMSSS6PPesyTft2AunF0FXsXYaUhvoRwmXSLzKrqssvnuRkaE-lUAargPUiiIVY3CR85XWrO1ApBqDM9jzbrsBdWQH4NVPrqgWnQbdS2f8y89sSOagyv_E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-primary font-label-caps">Minimalist Buzz</span>
+</div>
+</div>
+<!-- 12. Taper Fade -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px] border border-[#C5A059]/20">
+<img alt="Taper Fade" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Portrait of a smiling man with a clean taper fade and subtle wave texture, warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxonxxMfdI5fSj-jYxnJ2E40b1BwwnQaS419H5tozZUC-dD-R5l81jAvhmVDYu1XbUypN8t_kYZs2VTCsrgLjf7VRc45nlbQB0vvLs_m7slouwkrm6whNENl0quzjsW6Q8OAAkcSdmhtgVDLGWRTtL5xMuvpxjCmRjOTfaJ631HWTqPZW9RJjcg6xdTzs5J_uyKay8MdE8u-4skqj0BJFNuBO_kaLuQVS7TWU9QIpLX0JzV0kfllg7KM079R6Wxt_n95BJlb59dxs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-primary font-label-caps">Modern Taper</span>
+</div>
+</div>
+<!-- 13. Long Hair Styling -->
+<div class="md:col-span-4 group relative overflow-hidden h-[300px] border border-[#C5A059]/20">
+<img alt="Long hair groom" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Medium length men's hair styled with volume and texture, professional barber blow-dry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTdvKtaYqxX5iEkO7l4WNP02Xc-hhKHF6XgEBQIo_16VZMj3KAkBYdNuhUgsqcHnFalOWmYg_v7FEHtHjP3PskMtnr3PwJqu9QJg9gwFlvurp8u1KyJ9l0EQNaVLtYtbZRZ8jSex-wjT3us0henzWypOuyxOGhO9Qc-kbdfdjLSdK8TTYpc-vHECCP06hYACcddZQoUpQQS0ikrSgPAxkgoO89aMLlilHIjbOuI-d6msyQRRc_Gkt43jelApUVRuGaMM17ys5QNdM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-primary font-label-caps">Heritage Lengths</span>
+</div>
+</div>
+<!-- 14. Luxury Wash Station -->
+<div class="md:col-span-6 group relative overflow-hidden h-[350px] border border-[#C5A059]/20">
+<img alt="Wash Station" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Black porcelain wash basin in a luxury barbershop, brass fixtures, reflections on dark tiled walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh1v6EKpkmReUxYe0lMIxL_pYocWmyFhd6Lphy9FG4CQWfYKWvVa0PBpENmp7fvmbL2bIsNVYG6MGFA6IalsvzwcIc3btxZjMgc-mET0eexET6rF53YYASNxY8exDIg6aXriEFYGuTp0a1Q0vLRiW-zE3S_ejlnDg4RENlgtmmGdnLMivuxEbz8pA4-h1YZKDRDZ6anB19CDLH0Tv-J_srOHD7R9oWWr-9hDo4R9ZIzV1-e36mDp3mRJ8OVPIkhQCJbf2eAftQ4-I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary font-headline-md uppercase">RelajaciÃ³n Total</span>
+</div>
+</div>
+<!-- 15. The Executive Look -->
+<div class="md:col-span-6 group relative overflow-hidden h-[350px] border border-[#C5A059]/20">
+<img alt="Executive Look" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="Businessman with sharp professional haircut and clean shave, looking into camera, executive grooming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbFhbQv-Qj1PAA83Oy9QiC2lkOjPHw0PX8ql4fh1j8DV80tevxggWYP-Glb3LJ0xwpKOaZ5HWPYm40IIWryQLR8FYMcQcm-73p_tjDIxB6X_6c8kNheoWPgvPbi4gdAxtRXmCy5tCez_vZ8bUFXHnKmiopIgW_KXihgQAfhDukj9SWzCpqhmjiUA_DUP_rxphMn0u-v4QMHGDbmTTt3W79aJ7Uflp5llhV6U3ySvBv57jNyDG3_4CgaM3vXZItmOCWaiHe-xcaceY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+<span class="text-primary font-headline-md uppercase">The Executive</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Section (From JSON) -->
+<footer class="bg-[#121212] border-t border-[#C5A059]/20 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-10">
+<div class="text-lg font-black text-[#C5A059] font-serif uppercase mb-4 md:mb-0">
+                    HERITAGE &amp; STEEL
+                </div>
+<div class="flex gap-8 mb-6 md:mb-0">
+<a class="text-stone-500 font-serif text-xs uppercase tracking-widest hover:text-[#C5A059] transition-all" href="#">INSTAGRAM</a>
+<a class="text-stone-500 font-serif text-xs uppercase tracking-widest hover:text-[#C5A059] transition-all" href="#">FACEBOOK</a>
+<a class="text-stone-500 font-serif text-xs uppercase tracking-widest hover:text-[#C5A059] transition-all" href="#">PRIVACY</a>
+</div>
+<div class="text-[#C5A059] font-serif text-xs uppercase tracking-widest opacity-80">
+                    Â© 2024 HERITAGE &amp; STEEL. PRECISION MEETS HERITAGE.
+                </div>
+</div>
+</footer>
+</main>
+<!-- FAB for quick booking (Mobile only context suppression check - usually hidden in full overlays but keeping for brand consistency if relevant) -->
+<div class="fixed bottom-8 right-8 md:hidden">
+<button class="bg-[#C5A059] text-[#121212] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</button>
+</div>
+</body></html>

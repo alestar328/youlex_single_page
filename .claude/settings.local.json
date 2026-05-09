@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(stitch-design)",
+      "Bash(claude mcp *)",
+      "WebFetch(domain:stitch.withgoogle.com)",
+      "mcp__stitch__list_projects",
+      "PowerShell($data = Get-Content \"C:\\\\Users\\\\newge\\\\.claude\\\\projects\\\\D--websites-Youlex-single-page\\\\e365c447-306a-44bf-ab0a-83aa37c44fe0\\\\tool-results\\\\mcp-stitch-list_projects-1778015752963.txt\" | ConvertFrom-Json; $data.projects | Select-Object displayName, name, projectId | Format-Table -AutoSize)",
+      "PowerShell($data = Get-Content \"C:\\\\Users\\\\newge\\\\.claude\\\\projects\\\\D--websites-Youlex-single-page\\\\e365c447-306a-44bf-ab0a-83aa37c44fe0\\\\tool-results\\\\mcp-stitch-list_projects-1778015752963.txt\" | ConvertFrom-Json; $data.projects | ForEach-Object { Write-Host \"---\"; $_ | ConvertTo-Json -Depth 3 })",
+      "PowerShell(Select-String *)",
+      "PowerShell(Get-Content *)",
+      "WebFetch(domain:contribution.usercontent.google.com)",
+      "mcp__stitch__get_screen",
+      "PowerShell(Out-File *)",
+      "Bash(npm create *)",
+      "Bash(cp -r D:/websites/Youlex_single_page/squealing-star/. D:/websites/Youlex_single_page/)",
+      "Bash(rm -rf D:/websites/Youlex_single_page/squealing-star)",
+      "Bash(npx astro *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/)",
+      "Bash(curl -s http://localhost:4321/)",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\newge\\\\.claude\\\\projects\\\\D--websites-Youlex-single-page\\\\bf1cddef-e01d-4bf8-a9a9-15b64afd36a7\\\\tool-results\\\\mcp-stitch-list_projects-1778335284856.txt\" | ConvertFrom-Json | Select-Object -ExpandProperty projects | Where-Object { $_.displayName -match \"youlex\" -or $_.name -match \"youlex\" } | ConvertTo-Json)",
+      "PowerShell(Start-Process \"npm\" -ArgumentList \"run\", \"dev\", \"--\", \"--host\" -WorkingDirectory \"D:\\\\websites\\\\Youlex_single_page\" -NoNewWindow)",
+      "PowerShell(Start-Sleep 5; try { Invoke-WebRequest -Uri \"http://localhost:4321/\" -UseBasicParsing -TimeoutSec 5 | Select-Object -ExpandProperty StatusCode } catch { \"Error: $_\" })",
+      "PowerShell($html = Invoke-WebRequest -Uri \"http://localhost:4321/\" -UseBasicParsing | Select-Object -ExpandProperty Content; $html | Select-String -Pattern \"\\(sticky|h-screen|flex-col|flex-shrink|min-h-0|hide-scrollbar|we_background|gallery_1|gallery_2|gallery_3|gallery_4|contact_background\\)\" | Select-Object -First 30 | ForEach-Object { $_.Line.Trim\\(\\) })",
+      "PowerShell($html = Get-Content \"C:\\\\Users\\\\newge\\\\.claude\\\\projects\\\\D--websites-Youlex-single-page\\\\35483cb9-d48b-443f-8af9-dc225e1fdfa8\\\\tool-results\\\\bhnxaokf9.txt\" -Raw; $matches = [regex]::Matches\\($html, '\\(sticky top-0|h-screen|min-h-0|flex-shrink-0|we_background|gallery_1|gallery_2|gallery_3|gallery_4|contact_background|hide-scrollbar|overflow-y-auto\\)'\\); $matches | ForEach-Object { $_.Value } | Sort-Object -Unique)",
+      "PowerShell(Start-Sleep 2; try { \\(Invoke-WebRequest -Uri \"http://localhost:4321/\" -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"Error: $_\" })"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+---
+const images = [
+  {
+    src: '/gallery_1.jpg',
+    alt: 'Corte de cabello masculino sofisticado con fade nítido y barba perfectamente arreglada.',
+    span: 'col-span-2',
+  },
+  {
+    src: '/gallery_2.JPG',
+    alt: 'Barbero usando navaja de afeitar tradicional para perfilar la barba.',
+    span: '',
+  },
+  {
+    src: '/gallery_3.jpg',
+    alt: 'Interior de barbería de lujo con madera oscura, accesorios de cobre e iluminación cálida.',
+    span: '',
+  },
+  {
+    src: '/gallery_4.jpg',
+    alt: 'Retrato de un hombre elegante con peinado pompadour clásico y barba limpia.',
+    span: 'col-span-2',
+  },
+];
+---
+
+<section
+  id="galeria"
+  class="w-full md:w-1/3 min-h-[600px] md:min-h-0 md:h-full bg-[#201f1f] flex flex-col border-b md:border-b-0 md:border-r border-[#EAE5D9]/10 overflow-hidden"
+>
+  <div class="p-5 pb-3 flex-shrink-0">
+    <h2 class="font-serif text-3xl md:text-4xl font-bold text-center text-[#EAE5D9] uppercase tracking-tight">Galería</h2>
+  </div>
+
+  <div class="flex-1 min-h-0 overflow-y-auto p-3 hide-scrollbar">
+    <div class="grid grid-cols-2 gap-2">
+      {images.map((img) => (
+        <div class={`${img.span} h-[22vh] overflow-hidden border border-[#EAE5D9]/20`}>
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
