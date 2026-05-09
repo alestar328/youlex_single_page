@@ -1,0 +1,213 @@
+---
+const images = [
+  { src: '/gallery_1.jpg',  alt: 'Corte con fade nítido y barba arreglada',      colSpan: 'col-span-2', aspect: 'aspect-[2/1]' },
+  { src: '/gallery_2.JPG',  alt: 'Navaja de afeitar tradicional',                 colSpan: 'col-span-1', aspect: 'aspect-square' },
+  { src: '/gallery_3.jpg',  alt: 'Interior de barbería',                          colSpan: 'col-span-1', aspect: 'aspect-square' },
+  { src: '/gallery_4.jpg',  alt: 'Pompadour clásico con barba limpia',            colSpan: 'col-span-2', aspect: 'aspect-[2/1]' },
+  { src: '/gallery_5.JPG',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
+  { src: '/gallery_6.JPG',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
+  { src: '/gallery_7.jpg',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
+  { src: '/gallery_8.jpg',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
+  { src: '/gallery_9.jpg',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
+  { src: '/gallery_10.jpg', alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
+];
+---
+
+<!-- ─── Gallery Modal ─── -->
+<div
+  id="gallery-modal"
+  aria-modal="true"
+  role="dialog"
+  aria-label="Galería Youlex Barbería"
+  class="fixed inset-0 z-50 bg-[#0e0e0e] flex flex-col gallery-modal-hidden"
+>
+  <!-- Top bar -->
+  <div class="flex items-center justify-between px-6 py-5 border-b border-[#EAE5D9]/10 flex-shrink-0">
+    <span class="font-serif text-2xl font-bold text-[#EAE5D9] uppercase tracking-[0.15em]">Galería</span>
+    <button
+      id="gallery-close"
+      aria-label="Cerrar galería"
+      class="text-[#EAE5D9]/70 hover:text-[#EAE5D9] transition-colors p-1"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mosaic grid -->
+  <div class="flex-1 overflow-y-auto p-3 md:p-4 hide-scrollbar">
+    <div class="grid grid-cols-3 gap-2 md:gap-3">
+      {images.map((img, index) => (
+        <button
+          class={`${img.colSpan} ${img.aspect} overflow-hidden cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EAE5D9]`}
+          data-index={index}
+          data-gallery-item
+          aria-label={`Ver foto: ${img.alt}`}
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<!-- ─── Lightbox ─── -->
+<div
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Foto ampliada"
+  class="fixed inset-0 z-[60] bg-black/96 flex items-center justify-center lightbox-hidden"
+>
+  <!-- Close -->
+  <button id="lb-close" aria-label="Cerrar foto" class="absolute top-4 right-4 text-[#EAE5D9]/70 hover:text-[#EAE5D9] transition-colors p-2 z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <!-- Prev -->
+  <button id="lb-prev" aria-label="Foto anterior" class="absolute left-2 md:left-6 text-[#EAE5D9]/60 hover:text-[#EAE5D9] transition-colors p-3 z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+
+  <!-- Next -->
+  <button id="lb-next" aria-label="Foto siguiente" class="absolute right-2 md:right-6 text-[#EAE5D9]/60 hover:text-[#EAE5D9] transition-colors p-3 z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+
+  <!-- Image -->
+  <img
+    id="lb-image"
+    src=""
+    alt=""
+    class="max-h-[88vh] max-w-[88vw] object-contain select-none transition-opacity duration-200"
+  />
+
+  <!-- Counter -->
+  <div id="lb-counter" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-[#EAE5D9]/50 font-serif text-sm tracking-[0.2em]"></div>
+</div>
+
+<style>
+  .gallery-modal-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .gallery-modal-open {
+    transform: translateY(0);
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .lightbox-hidden {
+    display: none;
+  }
+  .lightbox-open {
+    display: flex;
+  }
+</style>
+
+<script>
+  const SRCS = [
+    '/gallery_1.jpg', '/gallery_2.JPG', '/gallery_3.jpg', '/gallery_4.jpg',
+    '/gallery_5.JPG', '/gallery_6.JPG', '/gallery_7.jpg', '/gallery_8.jpg',
+    '/gallery_9.jpg', '/gallery_10.jpg',
+  ];
+
+  const modal    = document.getElementById('gallery-modal')!;
+  const lightbox = document.getElementById('lightbox')!;
+  const lbImage  = document.getElementById('lb-image') as HTMLImageElement;
+  const lbCounter = document.getElementById('lb-counter')!;
+
+  let current = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  // ── Open / Close modal ──────────────────────────────────────────────────
+  function openGallery() {
+    modal.classList.remove('gallery-modal-hidden');
+    modal.classList.add('gallery-modal-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGallery() {
+    modal.classList.remove('gallery-modal-open');
+    modal.classList.add('gallery-modal-hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('open-gallery', openGallery);
+  document.getElementById('gallery-close')!.addEventListener('click', closeGallery);
+
+  // ── Lightbox ─────────────────────────────────────────────────────────────
+  function openLightbox(index: number) {
+    current = index;
+    lbImage.style.opacity = '0';
+    lbImage.src = SRCS[current];
+    lbCounter.textContent = `${current + 1} / ${SRCS.length}`;
+    lightbox.classList.remove('lightbox-hidden');
+    lightbox.classList.add('lightbox-open');
+    lbImage.onload = () => { lbImage.style.opacity = '1'; };
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('lightbox-open');
+    lightbox.classList.add('lightbox-hidden');
+  }
+
+  function navigate(dir: number) {
+    current = (current + dir + SRCS.length) % SRCS.length;
+    lbImage.style.opacity = '0';
+    setTimeout(() => {
+      lbImage.src = SRCS[current];
+      lbCounter.textContent = `${current + 1} / ${SRCS.length}`;
+      lbImage.onload = () => { lbImage.style.opacity = '1'; };
+    }, 120);
+  }
+
+  document.querySelectorAll('[data-gallery-item]').forEach((item) => {
+    item.addEventListener('click', () => {
+      const idx = parseInt((item as HTMLElement).dataset.index ?? '0', 10);
+      openLightbox(idx);
+    });
+  });
+
+  document.getElementById('lb-close')!.addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev')!.addEventListener('click', () => navigate(-1));
+  document.getElementById('lb-next')!.addEventListener('click', () => navigate(1));
+
+  // ── Keyboard ──────────────────────────────────────────────────────────────
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('lightbox-open')) {
+      if (e.key === 'ArrowLeft')  navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+      if (e.key === 'Escape')     closeLightbox();
+      return;
+    }
+    if (modal.classList.contains('gallery-modal-open')) {
+      if (e.key === 'Escape') closeGallery();
+    }
+  });
+
+  // ── Touch swipe (lightbox) ────────────────────────────────────────────────
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    const dx = touchStartX - e.changedTouches[0].clientX;
+    const dy = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      navigate(dx > 0 ? 1 : -1);
+    }
+  }, { passive: true });
+</script>

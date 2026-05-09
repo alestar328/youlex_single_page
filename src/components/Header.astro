@@ -13,12 +13,12 @@
     >
       Nosotros
     </a>
-    <a
-      href="#galeria"
-      class="text-stone-400 hover:text-[#EAE5D9] transition-colors font-serif uppercase tracking-tighter"
+    <button
+      id="nav-galeria"
+      class="text-stone-400 hover:text-[#EAE5D9] transition-colors font-serif uppercase tracking-tighter cursor-pointer bg-transparent border-none p-0"
     >
       Galería
-    </a>
+    </button>
     <a
       href="#contacto"
       class="text-stone-400 hover:text-[#EAE5D9] transition-colors font-serif uppercase tracking-tighter"
@@ -31,3 +31,9 @@
     Reservar
   </button>
 </header>
+
+<script>
+  document.getElementById('nav-galeria')?.addEventListener('click', () => {
+    document.dispatchEvent(new CustomEvent('open-gallery'));
+  });
+</script>
