@@ -1,16 +1,13 @@
 ---
-const images = [
-  { src: '/gallery_1.jpg',  alt: 'Corte con fade nítido y barba arreglada',      colSpan: 'col-span-2', aspect: 'aspect-[2/1]' },
-  { src: '/gallery_2.JPG',  alt: 'Navaja de afeitar tradicional',                 colSpan: 'col-span-1', aspect: 'aspect-square' },
-  { src: '/gallery_3.jpg',  alt: 'Interior de barbería',                          colSpan: 'col-span-1', aspect: 'aspect-square' },
-  { src: '/gallery_4.jpg',  alt: 'Pompadour clásico con barba limpia',            colSpan: 'col-span-2', aspect: 'aspect-[2/1]' },
-  { src: '/gallery_5.JPG',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
-  { src: '/gallery_6.JPG',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
-  { src: '/gallery_7.jpg',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
-  { src: '/gallery_8.jpg',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
-  { src: '/gallery_9.jpg',  alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
-  { src: '/gallery_10.jpg', alt: 'Trabajo de barbería',                           colSpan: 'col-span-1', aspect: 'aspect-square' },
+const photos = [
+  { src: '/gallery_1.jpg', alt: 'Corte con fade nítido y barba arreglada' },
+  { src: '/gallery_2.JPG', alt: 'Navaja de afeitar tradicional' },
+  { src: '/gallery_3.jpg', alt: 'Interior de barbería' },
+  { src: '/gallery_4.jpg', alt: 'Pompadour clásico con barba limpia' },
 ];
+
+// youlex_1 se repite al final (1, 2, 1)
+const videos = ['/youlex_1.mp4', '/youlex_2.mp4', '/youlex_1.mp4'];
 ---
 
 <!-- ─── Gallery Modal ─── -->
@@ -35,24 +32,47 @@ const images = [
     </button>
   </div>
 
-  <!-- Mosaic grid -->
-  <div class="flex-1 overflow-y-auto p-3 md:p-4 hide-scrollbar">
-    <div class="grid grid-cols-3 gap-2 md:gap-3">
-      {images.map((img, index) => (
-        <button
-          class={`${img.colSpan} ${img.aspect} overflow-hidden cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EAE5D9]`}
-          data-index={index}
-          data-gallery-item
-          aria-label={`Ver foto: ${img.alt}`}
-        >
-          <img
-            src={img.src}
-            alt={img.alt}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-          />
-        </button>
-      ))}
+  <!-- Single screen: photos (left) + videos (right) -->
+  <div class="flex-1 min-h-0 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden hide-scrollbar">
+    <!-- Left side: 4 photos with zoom (contenedor reducido) -->
+    <div class="w-full md:w-1/3 md:h-full p-3 md:p-4">
+      <div class="grid grid-cols-2 grid-rows-2 gap-2 md:gap-3 h-[45vh] md:h-full">
+        {photos.map((img, index) => (
+          <button
+            class="overflow-hidden cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EAE5D9] border border-[#EAE5D9]/15"
+            data-index={index}
+            data-gallery-item
+            aria-label={`Ver foto: ${img.alt}`}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Right side: 3 videos verticales estilo reel (autoplay, muted, loop) -->
+    <div class="w-full md:w-2/3 md:h-full p-3 md:p-4 flex items-center justify-center">
+      <div class="grid grid-cols-3 gap-3 md:gap-4 w-full max-w-5xl mx-auto">
+        {videos.map((src) => (
+          <div class="aspect-[9/18] overflow-hidden border border-[#EAE5D9]/15 bg-black">
+            <video
+              src={src}
+              class="w-full h-full object-cover"
+              muted
+              loop
+              autoplay
+              playsinline
+              preload="metadata"
+              data-gallery-video
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </div>
@@ -118,14 +138,15 @@ const images = [
 <script>
   const SRCS = [
     '/gallery_1.jpg', '/gallery_2.JPG', '/gallery_3.jpg', '/gallery_4.jpg',
-    '/gallery_5.JPG', '/gallery_6.JPG', '/gallery_7.jpg', '/gallery_8.jpg',
-    '/gallery_9.jpg', '/gallery_10.jpg',
   ];
 
   const modal    = document.getElementById('gallery-modal')!;
   const lightbox = document.getElementById('lightbox')!;
   const lbImage  = document.getElementById('lb-image') as HTMLImageElement;
   const lbCounter = document.getElementById('lb-counter')!;
+  const videos = Array.from(
+    document.querySelectorAll<HTMLVideoElement>('[data-gallery-video]')
+  );
 
   let current = 0;
   let touchStartX = 0;
@@ -136,12 +157,17 @@ const images = [
     modal.classList.remove('gallery-modal-hidden');
     modal.classList.add('gallery-modal-open');
     document.body.style.overflow = 'hidden';
+    videos.forEach((v) => {
+      v.currentTime = 0;
+      v.play().catch(() => {});
+    });
   }
 
   function closeGallery() {
     modal.classList.remove('gallery-modal-open');
     modal.classList.add('gallery-modal-hidden');
     document.body.style.overflow = '';
+    videos.forEach((v) => v.pause());
   }
 
   document.addEventListener('open-gallery', openGallery);
