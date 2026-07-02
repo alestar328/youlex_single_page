@@ -1,22 +1,22 @@
 ---
 const images = [
   {
-    src: '/gallery_1.jpg',
+    src: '/gallery_1.webp',
     alt: 'Corte de cabello masculino sofisticado con fade nítido y barba perfectamente arreglada.',
     span: 'col-span-2',
   },
   {
-    src: '/gallery_2.JPG',
+    src: '/gallery_2.webp',
     alt: 'Barbero usando navaja de afeitar tradicional para perfilar la barba.',
     span: '',
   },
   {
-    src: '/gallery_3.jpg',
+    src: '/gallery_3.webp',
     alt: 'Interior de barbería de lujo con madera oscura, accesorios de cobre e iluminación cálida.',
     span: '',
   },
   {
-    src: '/gallery_4.jpg',
+    src: '/gallery_4.webp',
     alt: 'Retrato de un hombre elegante con peinado pompadour clásico y barba limpia.',
     span: 'col-span-2',
   },
@@ -41,6 +41,8 @@ const images = [
           <img
             src={img.src}
             alt={img.alt}
+            loading="lazy"
+            decoding="async"
             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
           />
         </div>

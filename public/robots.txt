@@ -1,0 +1,6 @@
+# Youlex Barber's — Terrassa
+User-agent: *
+Allow: /
+
+# TODO: descomentar cuando exista el dominio final (y definir SITE_URL en src/data/business.ts)
+# Sitemap: https://TU-DOMINIO.com/sitemap.xml

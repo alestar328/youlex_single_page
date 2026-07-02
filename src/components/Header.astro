@@ -1,10 +1,12 @@
 ---
+import { BUSINESS } from '../data/business';
 ---
 
 <header class="sticky top-0 w-full z-50 border-b border-[#EAE5D9]/20 bg-[#121212]/90 backdrop-blur-md flex justify-between items-center px-8 h-20 flex-shrink-0">
-  <div class="text-xl md:text-2xl font-bold tracking-[0.2em] text-[#EAE5D9] font-serif uppercase">
+  <h1 class="text-xl md:text-2xl font-bold tracking-[0.2em] text-[#EAE5D9] font-serif uppercase">
     Youlex Barbería
-  </div>
+    <span class="sr-only">— Barbería en Terrassa: cortes de pelo y arreglo de barba</span>
+  </h1>
 
   <nav class="hidden md:flex gap-12">
     <a
@@ -23,13 +25,18 @@
       href="#contacto"
       class="text-stone-400 hover:text-[#EAE5D9] transition-colors font-serif uppercase tracking-tighter"
     >
-      Contacto
+      Redes
     </a>
   </nav>
 
-  <button class="bg-[#EAE5D9] text-[#121212] px-4 md:px-6 py-2 uppercase text-xs font-bold tracking-widest hover:opacity-90 transition-all duration-300">
+  <a
+    href={BUSINESS.booksyUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="bg-[#EAE5D9] text-[#121212] px-4 md:px-6 py-2 uppercase text-xs font-bold tracking-widest hover:opacity-90 transition-all duration-300"
+  >
     Reservar
-  </button>
+  </a>
 </header>
 
 <script>
