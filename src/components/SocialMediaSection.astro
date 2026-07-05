@@ -44,7 +44,7 @@ const posts: string[] = [
   <!-- Galería de publicaciones -->
   <div class="flex-1 min-h-0 overflow-y-auto px-3 pb-3 hide-scrollbar">
     {posts.length > 0 ? (
-      <div class="flex flex-col gap-3 items-center">
+      <div class="flex flex-col gap-3 items-center w-full max-w-[20rem] md:max-w-[18rem] mx-auto">
         {posts.map((url) => (
           <blockquote
             class="instagram-media !min-w-0 !w-full !max-w-full !m-0 !border-0 !rounded-none"

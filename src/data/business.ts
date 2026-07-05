@@ -40,7 +40,11 @@ export const BUSINESS = {
   instagramUrl: 'https://www.instagram.com/youlex_salon/',
   instagramHandle: '@youlex_salon',
   booksyUrl: 'https://booksy.com/es-es/63343_youlex-barbers_barberia_49408_terrassa',
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Youlex+Barber's+Carrer+del+Moixer%C3%B3+6+Terrassa",
+  // Enlace corto para "abrir en Google Maps" (compartido por el negocio)
+  mapsUrl: 'https://maps.app.goo.gl/2BsqotvNESVrB6gH7',
+  // Iframe incrustable (sin API key) con pin etiquetado del negocio
+  mapsEmbedUrl:
+    'https://maps.google.com/maps?q=Youlex%20Barber%27s%2C%20Carrer%20del%20Moixer%C3%B3%206%2C%20Terrassa&hl=es&z=16&output=embed',
 
   priceRange: '€€',
 

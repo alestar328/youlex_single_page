@@ -35,7 +35,8 @@
       "Bash(where cwebp *)",
       "Bash(ffmpeg -version)",
       "Bash(node -e \"console.log\\(require\\('sharp'\\).versions.sharp || 'ok'\\)\")",
-      "Bash(node *)"
+      "Bash(node *)",
+      "PowerShell(npm run *)"
     ]
   }
 }
